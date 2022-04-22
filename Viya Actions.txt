@@ -1,0 +1,1267 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<SASReport xmlns="http://www.sas.com/sasreportmodel/bird-4.16.0" label="Viya Actions" createdLocale="en" createdVersion="4.16.0" dateCreated="2022-04-21T15:07:46Z" dateModified="2022-04-22T07:17:09Z" createdApplication="SAS Visual Analytics 2020" lastModifiedApplication="SAS Visual Analytics 2020" nextUniqueNameIndex="424">
+	<DataDefinitions>
+		<ParentDataDefinition childQueryRelationship="independent" dataSources="ds7 ds70" name="dd132">
+			<BusinessItems>
+				<SyntheticItems name="si134">
+					<Item purpose="message" name="bi135"/>
+				</SyntheticItems>
+				<RelationalDataItem name="bi95" base="bi9"/>
+				<RelationalDataItem name="bi96" base="bi11"/>
+				<RelationalDataItem name="bi97" base="bi8"/>
+				<RelationalDataItem name="bi98" base="bi10"/>
+				<RelationalDataItem name="bi99" base="bi69"/>
+				<RelationalDataItem name="bi100" base="bi71"/>
+				<RelationalDataItem name="bi101" base="bi75"/>
+				<RelationalDataItem name="bi102" base="bi72"/>
+				<RelationalDataItem name="bi103" base="bi73"/>
+				<RelationalDataItem name="bi104" base="bi74"/>
+			</BusinessItems>
+			<DataDefinition type="procedural" dataSources="ds7 ds70" name="dd133">
+				<ProceduralQuery type="join">
+					<GeneratedResources>
+						<GeneratedTable purpose="joinedTable" lifetime="executor" name="ge136"/>
+					</GeneratedResources>
+					<Arguments>
+						<Argument purpose="joinType">
+							<StringValue>leftOuterJoin</StringValue>
+						</Argument>
+						<ArgumentGroup group="table1">
+							<Argument purpose="dataSource">
+								<ReferenceValue>ds7</ReferenceValue>
+							</Argument>
+							<ListArgument purpose="joinColumns">
+								<ReferenceValue>bi95</ReferenceValue>
+								<ReferenceValue>bi96</ReferenceValue>
+							</ListArgument>
+							<ListArgument purpose="selectColumns">
+								<ReferenceValue>bi96</ReferenceValue>
+								<ReferenceValue>bi95</ReferenceValue>
+								<ReferenceValue>bi97</ReferenceValue>
+								<ReferenceValue>bi98</ReferenceValue>
+								<ReferenceValue>bi99</ReferenceValue>
+							</ListArgument>
+						</ArgumentGroup>
+						<ArgumentGroup group="table2">
+							<Argument purpose="dataSource">
+								<ReferenceValue>ds70</ReferenceValue>
+							</Argument>
+							<ListArgument purpose="joinColumns">
+								<ReferenceValue>bi100</ReferenceValue>
+								<ReferenceValue>bi101</ReferenceValue>
+							</ListArgument>
+							<ListArgument purpose="selectColumns">
+								<ReferenceValue>bi102</ReferenceValue>
+								<ReferenceValue>bi103</ReferenceValue>
+								<ReferenceValue>bi104</ReferenceValue>
+							</ListArgument>
+						</ArgumentGroup>
+					</Arguments>
+				</ProceduralQuery>
+				<ResultDefinitions>
+					<ResultDefinition purpose="status" name="dd147" syntheticItems="si134"/>
+				</ResultDefinitions>
+			</DataDefinition>
+		</ParentDataDefinition>
+		<ParentDataDefinition childQueryRelationship="independent" status="executable" dataSource="ds106" name="dd253">
+			<BusinessItems>
+				<RelationalDataItem name="bi280" base="bi279"/>
+				<RelationalDataItem name="bi331" base="bi118"/>
+				<RelationalDataItem name="bi414" base="bi174"/>
+				<RelationalDataItem name="bi415" base="bi113"/>
+				<MultidimensionalDataItem name="bi416" base="bi169"/>
+			</BusinessItems>
+			<DataDefinition dataSource="ds106" type="relational" name="dd254">
+				<RelationalQuery detail="false">
+					<Axes>
+						<Axis type="column">
+							<BusinessItem ref="bi280"/>
+						</Axis>
+					</Axes>
+					<SortItems>
+						<SortItem ref="bi280" sortDirection="ascending"/>
+					</SortItems>
+				</RelationalQuery>
+				<ResultDefinitions>
+					<ResultDefinition purpose="primary" maxRowsLookup="dropdown" maxRowsBehavior="truncate" name="dd252"/>
+				</ResultDefinitions>
+			</DataDefinition>
+			<RankItems>
+				<RankItem rankBy="bi331" groupBy="bi280" n="5" includeTies="false" other="false" subset="top" type="count" name="rk332"/>
+			</RankItems>
+		</ParentDataDefinition>
+		<ParentDataDefinition childQueryRelationship="independent" status="executable" dataSource="ds106" name="dd274">
+			<BusinessItems>
+				<RelationalDataItem name="bi268" base="bi267"/>
+				<RelationalDataItem name="bi333" base="bi118"/>
+				<RelationalDataItem name="bi417" base="bi174"/>
+				<RelationalDataItem name="bi418" base="bi113"/>
+				<MultidimensionalDataItem name="bi419" base="bi169"/>
+			</BusinessItems>
+			<DataDefinition dataSource="ds106" type="relational" name="dd275">
+				<RelationalQuery detail="false">
+					<Axes>
+						<Axis type="column">
+							<BusinessItem ref="bi268"/>
+						</Axis>
+					</Axes>
+					<SortItems>
+						<SortItem ref="bi268" sortDirection="ascending"/>
+					</SortItems>
+				</RelationalQuery>
+				<ResultDefinitions>
+					<ResultDefinition purpose="primary" maxRowsLookup="dropdown" maxRowsBehavior="truncate" name="dd276"/>
+				</ResultDefinitions>
+			</DataDefinition>
+			<RankItems>
+				<RankItem rankBy="bi333" groupBy="bi268" n="5" includeTies="false" other="false" subset="top" type="count" name="rk334"/>
+			</RankItems>
+		</ParentDataDefinition>
+		<ParentDataDefinition childQueryRelationship="independent" status="executable" dataSource="ds106" name="dd291">
+			<BusinessItems>
+				<RelationalDataItem name="bi287" base="bi267"/>
+				<RelationalDataItem name="bi289" base="bi118"/>
+				<RelationalFilterItem name="bi296">
+					<EditorProperties>
+						<Property key="complexity">SINGLE_DATA_ITEM</Property>
+						<Property key="interactiveEditingAllowed">FALSE</Property>
+					</EditorProperties>
+					<Expression>eq(${bi287,binned},#{pr244})</Expression>
+				</RelationalFilterItem>
+			</BusinessItems>
+			<DataDefinition dataSource="ds106" type="relational" name="dd292">
+				<RelationalQuery detail="false">
+					<Axes>
+						<Axis type="column">
+							<BusinessItem ref="bi287"/>
+							<BusinessItem ref="bi289"/>
+						</Axis>
+					</Axes>
+					<SortItems>
+						<SortItem ref="bi287" sortDirection="ascending"/>
+					</SortItems>
+				</RelationalQuery>
+				<ResultDefinitions>
+					<ResultDefinition purpose="primary" maxRowsLookup="listTable" maxRowsBehavior="truncate" name="dd293"/>
+				</ResultDefinitions>
+			</DataDefinition>
+			<AppliedFilters>
+				<DetailFilters>
+					<BusinessItem ref="bi296"/>
+				</DetailFilters>
+			</AppliedFilters>
+			<RankItems>
+				<RankItem rankBy="bi289" groupBy="bi287" n="5" includeTies="false" other="false" subset="top" type="count" name="rk318"/>
+			</RankItems>
+		</ParentDataDefinition>
+		<ParentDataDefinition childQueryRelationship="independent" status="executable" dataSource="ds106" name="dd311">
+			<BusinessItems>
+				<RelationalDataItem name="bi309" base="bi118"/>
+				<RelationalDataItem name="bi315" base="bi279"/>
+				<RelationalFilterItem name="bi316">
+					<EditorProperties>
+						<Property key="complexity">SINGLE_DATA_ITEM</Property>
+						<Property key="interactiveEditingAllowed">FALSE</Property>
+					</EditorProperties>
+					<Expression>eq(${bi315,binned},#{pr245})</Expression>
+				</RelationalFilterItem>
+			</BusinessItems>
+			<DataDefinition dataSource="ds106" type="relational" name="dd312">
+				<RelationalQuery detail="false">
+					<Axes>
+						<Axis type="column">
+							<BusinessItem ref="bi309"/>
+							<BusinessItem ref="bi315"/>
+						</Axis>
+					</Axes>
+					<SortItems>
+						<SortItem ref="bi315" sortDirection="descending"/>
+					</SortItems>
+				</RelationalQuery>
+				<ResultDefinitions>
+					<ResultDefinition purpose="primary" maxRowsLookup="listTable" maxRowsBehavior="truncate" name="dd308"/>
+				</ResultDefinitions>
+			</DataDefinition>
+			<AppliedFilters>
+				<DetailFilters>
+					<BusinessItem ref="bi316"/>
+				</DetailFilters>
+			</AppliedFilters>
+			<RankItems>
+				<RankItem rankBy="bi309" groupBy="bi315" n="5" includeTies="false" other="false" subset="top" type="count" name="rk317"/>
+			</RankItems>
+		</ParentDataDefinition>
+		<ParentDataDefinition childQueryRelationship="independent" status="executable" dataSource="ds106" name="dd339">
+			<BusinessItems>
+				<RelationalDataItem name="bi338" base="bi174"/>
+				<RelationalDataItem name="bi330" base="bi118"/>
+			</BusinessItems>
+			<DataDefinition dataSource="ds106" type="relational" name="dd340">
+				<RelationalQuery detail="false">
+					<Axes>
+						<Axis type="column">
+							<BusinessItem ref="bi338"/>
+							<BusinessItem ref="bi330"/>
+						</Axis>
+					</Axes>
+					<SortItems>
+						<SortItem ref="bi338" sortDirection="ascending"/>
+					</SortItems>
+				</RelationalQuery>
+				<ResultDefinitions>
+					<ResultDefinition purpose="primary" maxRowsLookup="list" maxRowsBehavior="truncate" name="dd341"/>
+				</ResultDefinitions>
+			</DataDefinition>
+		</ParentDataDefinition>
+		<ParentDataDefinition childQueryRelationship="independent" status="executable" dataSource="ds106" name="dd348">
+			<BusinessItems>
+				<RelationalDataItem name="bi346" base="bi118"/>
+				<RelationalDataItem name="bi358" base="bi113"/>
+			</BusinessItems>
+			<DataDefinition dataSource="ds106" type="relational" name="dd349">
+				<RelationalQuery detail="false">
+					<Axes>
+						<Axis type="column">
+							<BusinessItem ref="bi346"/>
+							<BusinessItem ref="bi358"/>
+						</Axis>
+					</Axes>
+					<SortItems>
+						<SortItem ref="bi358" sortDirection="ascending"/>
+					</SortItems>
+				</RelationalQuery>
+				<ResultDefinitions>
+					<ResultDefinition purpose="primary" maxRowsLookup="list" maxRowsBehavior="truncate" name="dd345"/>
+				</ResultDefinitions>
+			</DataDefinition>
+		</ParentDataDefinition>
+		<ParentDataDefinition childQueryRelationship="independent" status="executable" dataSource="ds106" name="dd378">
+			<BusinessItems>
+				<RelationalDataItem name="bi382" base="bi174"/>
+				<RelationalDataItem name="bi383" base="bi118"/>
+			</BusinessItems>
+			<DataDefinition dataSource="ds106" type="relational" name="dd379">
+				<RelationalQuery detail="false">
+					<Axes>
+						<Axis type="column">
+							<BusinessItem ref="bi382"/>
+							<BusinessItem ref="bi383"/>
+						</Axis>
+					</Axes>
+					<SortItems>
+						<SortItem ref="bi382" sortDirection="ascending"/>
+					</SortItems>
+				</RelationalQuery>
+				<ResultDefinitions>
+					<ResultDefinition purpose="primary" maxRowsLookup="buttonBar" maxRowsBehavior="truncate" name="dd380"/>
+				</ResultDefinitions>
+			</DataDefinition>
+		</ParentDataDefinition>
+		<ParentDataDefinition childQueryRelationship="independent" status="executable" dataSource="ds106" name="dd359">
+			<BusinessItems>
+				<RelationalDataItem name="bi219" base="bi113"/>
+				<RelationalDataItem name="bi212" base="bi209"/>
+				<RelationalDataItem name="bi204" base="bi118"/>
+				<RelationalDataItem name="bi422" base="bi174"/>
+			</BusinessItems>
+			<DataDefinition dataSource="ds106" type="multidimensional" name="dd360">
+				<MultidimensionalQuery rowSubtotals="false" columnSubtotals="false" rowTotals="false" columnTotals="true" detail="false">
+					<Axes>
+						<Axis type="column">
+							<BusinessItem ref="bi219"/>
+							<BusinessItem ref="bi204"/>
+						</Axis>
+						<Axis type="row">
+							<BusinessItem ref="bi212"/>
+						</Axis>
+					</Axes>
+					<ColumnSortItems>
+						<SortItem ref="bi219" sortDirection="ascending"/>
+					</ColumnSortItems>
+					<RowSortItems>
+						<MeasureSortItem ref="bi204" sortDirection="descending">
+							<SortMember ref="bi219">&apos;SAS Visual Statistics&apos;</SortMember>
+						</MeasureSortItem>
+						<SortItem ref="bi212" sortDirection="descending"/>
+					</RowSortItems>
+				</MultidimensionalQuery>
+				<ResultDefinitions>
+					<ResultDefinition purpose="primary" maxRowsLookup="crosstab" maxRowsBehavior="noData" name="dd361"/>
+				</ResultDefinitions>
+			</DataDefinition>
+		</ParentDataDefinition>
+		<ParentDataDefinition childQueryRelationship="independent" status="executable" dataSource="ds106" name="dd392">
+			<BusinessItems>
+				<RelationalDataItem name="bi390" base="bi118"/>
+				<RelationalDataItem name="bi391" base="bi113"/>
+			</BusinessItems>
+			<DataDefinition dataSource="ds106" type="relational" name="dd393">
+				<RelationalQuery detail="false">
+					<Axes>
+						<Axis type="column">
+							<BusinessItem ref="bi390"/>
+							<BusinessItem ref="bi391"/>
+						</Axis>
+					</Axes>
+					<SortItems>
+						<SortItem ref="bi391" sortDirection="ascending"/>
+					</SortItems>
+				</RelationalQuery>
+				<ResultDefinitions>
+					<ResultDefinition purpose="primary" maxRowsLookup="list" maxRowsBehavior="truncate" name="dd389"/>
+				</ResultDefinitions>
+			</DataDefinition>
+		</ParentDataDefinition>
+		<ParentDataDefinition childQueryRelationship="independent" status="executable" dataSource="ds7" name="dd43">
+			<BusinessItems>
+				<RelationalDataItem name="bi38" base="bi12"/>
+				<RelationalDataItem name="bi56" base="bi53"/>
+				<MultidimensionalDataItem name="bi64" base="bi63"/>
+			</BusinessItems>
+			<DataDefinition dataSource="ds7" type="multidimensional" name="dd44">
+				<MultidimensionalQuery rowSubtotals="false" columnSubtotals="false" detail="false">
+					<Axes>
+						<Axis type="column">
+							<BusinessItem ref="bi56"/>
+							<BusinessItem ref="bi38"/>
+						</Axis>
+						<Axis type="row">
+							<BusinessItem ref="bi64"/>
+						</Axis>
+					</Axes>
+					<ColumnSortItems>
+						<SortItem ref="bi56" sortDirection="ascending"/>
+					</ColumnSortItems>
+					<RowSortItems>
+						<MeasureSortItem ref="bi38" sortDirection="ascending">
+							<SortMember ref="bi56">&apos;Viya 3.4&apos;</SortMember>
+						</MeasureSortItem>
+						<SortItem ref="bi64" sortDirection="descending">
+							<SortLevel uniqueLevelName="bi58" sortDirection="descending"/>
+							<SortLevel uniqueLevelName="bi8" sortDirection="ascending"/>
+						</SortItem>
+					</RowSortItems>
+				</MultidimensionalQuery>
+				<ResultDefinitions>
+					<ResultDefinition purpose="primary" maxRowsLookup="crosstab" maxRowsBehavior="noData" name="dd45"/>
+				</ResultDefinitions>
+			</DataDefinition>
+		</ParentDataDefinition>
+		<ParentDataDefinition childQueryRelationship="independent" status="executable" dataSource="ds106" name="dd159">
+			<BusinessItems>
+				<RelationalDataItem name="bi165" base="bi118"/>
+				<MultidimensionalDataItem name="bi170" base="bi169"/>
+				<RelationalDataItem name="bi177" base="bi174"/>
+				<RelationalDataItem name="bi423" base="bi113"/>
+			</BusinessItems>
+			<NavigationSteps>
+				<Step>expandAll(${bi170,binned},1)</Step>
+				<Step>expand(${bi170,binned},[&apos;SAS Visual Data Mining and Machine Learning&apos;,&apos;Recommender Engine&apos;])</Step>
+				<Step>expand(${bi170,binned},[&apos;SAS Visual Forecasting&apos;,&apos;KT Chart&apos;])</Step>
+			</NavigationSteps>
+			<DataDefinition dataSource="ds106" type="multidimensional" name="dd160">
+				<MultidimensionalQuery rowSubtotals="false" columnSubtotals="false" detail="false">
+					<Axes>
+						<Axis type="column">
+							<BusinessItem ref="bi177"/>
+							<BusinessItem ref="bi165"/>
+						</Axis>
+						<Axis type="row">
+							<BusinessItem ref="bi170"/>
+						</Axis>
+					</Axes>
+					<ColumnSortItems>
+						<SortItem ref="bi177" sortDirection="ascending"/>
+					</ColumnSortItems>
+					<RowSortItems>
+						<SortItem ref="bi170" sortDirection="ascending">
+							<SortLevel uniqueLevelName="bi113" sortDirection="ascending"/>
+							<SortLevel uniqueLevelName="bi109" sortDirection="ascending"/>
+							<SortLevel uniqueLevelName="bi110" sortDirection="ascending"/>
+						</SortItem>
+					</RowSortItems>
+				</MultidimensionalQuery>
+				<ResultDefinitions>
+					<ResultDefinition purpose="primary" maxRowsLookup="crosstab" maxRowsBehavior="noData" name="dd161"/>
+				</ResultDefinitions>
+			</DataDefinition>
+		</ParentDataDefinition>
+	</DataDefinitions>
+	<DataSources>
+		<DataSource label="FRAYUP_ACTIONS" type="relational" name="ds7">
+			<CasResource server="cas-shared-default" library="swee" table="FRAYUP_ACTIONS" locale="en_US"/>
+			<BusinessItemFolder>
+				<DataItem name="bi8" xref="action_name"/>
+				<DataItem name="bi9" xref="action_set_name"/>
+				<DataItem name="bi10" xref="description"/>
+				<DataItem name="bi11" xref="version"/>
+				<PredefinedDataItem calculation="totalCount" name="bi12" label="Frequency" usage="quantitative" format="COMMA12."/>
+				<PredefinedDataItem calculation="totalCountPercent" name="bi13" label="Frequency Percent" usage="quantitative" format="PERCENT20.2"/>
+				<GroupedItem grouping="gr55" dataType="string" label="Version" name="bi53">
+					<GroupingParameters>
+						<GroupingParameter parameter="bi11" variable="var54"/>
+					</GroupingParameters>
+				</GroupedItem>
+				<GroupedItem grouping="gr60" dataType="string" label="Action Set" name="bi58">
+					<GroupingParameters>
+						<GroupingParameter parameter="bi9" variable="var59"/>
+					</GroupingParameters>
+				</GroupedItem>
+				<Hierarchy name="bi63" label="Action Set - action_name - description">
+					<Level ref="bi58"/>
+					<Level ref="bi8"/>
+					<Level ref="bi10"/>
+				</Hierarchy>
+				<DataItem name="bi69" xref="link"/>
+			</BusinessItemFolder>
+		</DataSource>
+		<DataSource label="FRAYUP_SETS" type="relational" name="ds70">
+			<CasResource server="cas-shared-default" library="swee" table="FRAYUP_SETS" locale="en_US"/>
+			<BusinessItemFolder>
+				<DataItem name="bi71" xref="action_set_name"/>
+				<DataItem name="bi72" xref="product"/>
+				<DataItem name="bi73" xref="set_description"/>
+				<DataItem name="bi74" xref="set_link"/>
+				<DataItem name="bi75" xref="version" usage="categorical"/>
+				<PredefinedDataItem calculation="totalCount" name="bi76" label="Frequency" usage="quantitative" format="COMMA12."/>
+				<PredefinedDataItem calculation="totalCountPercent" name="bi77" label="Frequency Percent" usage="quantitative" format="PERCENT20.2"/>
+				<Hierarchy name="bi78" label="product - action_set_name">
+					<Level ref="bi72"/>
+					<Level ref="bi71"/>
+				</Hierarchy>
+			</BusinessItemFolder>
+		</DataSource>
+		<DataSource label="Data_Join" type="relational" name="ds106">
+			<GeneratedResource type="standalone" resource="ge136" generator="dd133" lifetime="executor" sources="ds7 ds70" externalReferenceName="cas-shared-defaultsweeFRAYUP_ACTIONScas-shared-defaultsweeFRAYUP_SETSaction_set_nameversionaction_namedescriptionlinkaction_set_nameversionproductset_descriptionset_link"/>
+			<BusinessItemFolder>
+				<GeneratedDataItem root="bi96" name="bi108" label="version" xref="version" usage="categorical" format="$."/>
+				<GeneratedDataItem root="bi95" name="bi109" label="action_set_name" xref="action_set_name" usage="categorical" format="$."/>
+				<GeneratedDataItem root="bi97" name="bi110" label="action_name" xref="action_name" usage="categorical" format="$."/>
+				<GeneratedDataItem root="bi98" name="bi111" label="description" xref="description" usage="categorical" format="$."/>
+				<GeneratedDataItem root="bi99" name="bi112" label="link" xref="link" usage="categorical" format="$."/>
+				<GeneratedDataItem root="bi102" name="bi113" label="product" xref="product" usage="categorical" format="$."/>
+				<GeneratedDataItem root="bi103" name="bi116" label="set_description" xref="set_description" usage="categorical" format="$."/>
+				<GeneratedDataItem root="bi104" name="bi117" label="set_link" xref="set_link" usage="categorical" format="$."/>
+				<PredefinedDataItem calculation="totalCount" name="bi118" label="Frequency" usage="quantitative" format="COMMA12."/>
+				<PredefinedDataItem calculation="totalCountPercent" name="bi119" label="Frequency Percent" usage="quantitative" format="PERCENT20.2"/>
+				<Hierarchy name="bi169" label="product - Action Set - Action">
+					<Level ref="bi113"/>
+					<Level ref="bi209"/>
+					<Level ref="bi385"/>
+				</Hierarchy>
+				<GroupedItem grouping="gr176" dataType="string" label="Version" name="bi174">
+					<GroupingParameters>
+						<GroupingParameter parameter="bi108" variable="var175"/>
+					</GroupingParameters>
+				</GroupedItem>
+				<GroupedItem grouping="gr211" dataType="string" label="Action Set" name="bi209">
+					<GroupingParameters>
+						<GroupingParameter parameter="bi109" variable="var210"/>
+					</GroupingParameters>
+				</GroupedItem>
+				<CalculatedItem dataType="string" name="bi267" label="Action Set Link" usage="categorical" format="$." aggregation="sum">
+					<Expression>cond(beginswith(${bi117,binned},&apos;/doc/en&apos;),concatenate(&apos;https://go.documentation.sas.com&apos;,${bi117,binned}),${bi117,binned})</Expression>
+				</CalculatedItem>
+				<CalculatedItem dataType="string" name="bi279" label="Action Link" usage="categorical" format="$." aggregation="sum">
+					<Expression>cond(beginswith(${bi112,binned},&apos;/doc/en&apos;),concatenate(&apos;https://go.documentation.sas.com&apos;,${bi112,binned}),${bi112,binned})</Expression>
+				</CalculatedItem>
+				<GroupedItem grouping="gr387" dataType="string" label="Action" name="bi385">
+					<GroupingParameters>
+						<GroupingParameter parameter="bi110" variable="var386"/>
+					</GroupingParameters>
+				</GroupedItem>
+				<Hierarchy name="bi388" label="product - Action Set">
+					<Level ref="bi113"/>
+					<Level ref="bi209"/>
+				</Hierarchy>
+			</BusinessItemFolder>
+		</DataSource>
+	</DataSources>
+	<VisualElements>
+		<Prompt ref="pr245" name="ve256" label="Action Link Parameter" selectionDisabled="true" applyDynamicBrushes="promptsOnly" sourceInteractionVariables="bi280">
+			<EditorProperties>
+				<Property key="autoChartCategory">CONTROL</Property>
+				<Property key="isAutoLabel">false</Property>
+				<Property key="addedInteractionQueryDataItems">bi414,bi415,bi416</Property>
+			</EditorProperties>
+			<ComboBox/>
+		</Prompt>
+		<Prompt ref="pr244" name="ve247" label="Action Set Link parameter" selectionDisabled="true" applyDynamicBrushes="promptsOnly" sourceInteractionVariables="bi268">
+			<EditorProperties>
+				<Property key="isAutoLabel">false</Property>
+				<Property key="autoChartCategory">CONTROL</Property>
+				<Property key="addedInteractionQueryDataItems">bi417,bi418,bi419</Property>
+			</EditorProperties>
+			<ComboBox/>
+		</Prompt>
+		<Table columnSizing="autoFill" resultDefinitions="dd293" name="ve283" data="dd291" label="Action Set Link" action="ac295" applyDynamicBrushes="yes" sourceInteractionVariables="bi287">
+			<EditorProperties>
+				<Property key="isAutoLabel">false</Property>
+				<Property key="autoFrequencyQueryDataItemName">bi289</Property>
+			</EditorProperties>
+			<Columns>
+				<Column class="tableColumnbi287" variable="bi287" isVisible="true"/>
+				<Column variable="bi289" isVisible="true" compactFormat="false"/>
+			</Columns>
+		</Table>
+		<Table columnSizing="autoFill" resultDefinitions="dd308" name="ve313" data="dd311" label="Action Link" action="ac402" applyDynamicBrushes="yes" sourceInteractionVariables="bi315">
+			<EditorProperties>
+				<Property key="isAutoLabel">false</Property>
+				<Property key="autoFrequencyQueryDataItemName">bi309</Property>
+			</EditorProperties>
+			<Columns>
+				<Column class="tableColumnbi315" variable="bi315" isVisible="true"/>
+				<Column variable="bi309" isVisible="true" compactFormat="false"/>
+			</Columns>
+		</Table>
+		<VisualContainer containerType="layout" name="ve320" label="Layout Container 1" selectionDisabled="true">
+			<EditorProperties>
+				<Property key="visualType">LAYOUT_CONTAINER</Property>
+			</EditorProperties>
+		</VisualContainer>
+		<Prompt ref="pr342" name="ve324" label=" Version" applyDynamicBrushes="promptsOnly" sourceInteractionVariables="bi338">
+			<EditorProperties>
+				<Property key="isAutoLabel">false</Property>
+				<Property key="autoChartCategory">CONTROL</Property>
+			</EditorProperties>
+			<CheckBoxList searchable="false" selectAllEnabled="true"/>
+		</Prompt>
+		<VisualContainer containerType="layout" name="ve344" label="Layout Container 3" selectionDisabled="true">
+			<EditorProperties>
+				<Property key="visualType">LAYOUT_CONTAINER</Property>
+			</EditorProperties>
+		</VisualContainer>
+		<Prompt ref="pr350" name="ve351" label="Product" applyDynamicBrushes="promptsOnly" sourceInteractionVariables="bi358">
+			<EditorProperties>
+				<Property key="isAutoLabel">false</Property>
+				<Property key="autoChartCategory">CONTROL</Property>
+			</EditorProperties>
+			<CheckBoxList searchable="false" selectAllEnabled="true"/>
+		</Prompt>
+		<VisualContainer containerType="layout" name="ve357" label="Layout Container 4" selectionDisabled="true">
+			<EditorProperties>
+				<Property key="visualType">LAYOUT_CONTAINER</Property>
+			</EditorProperties>
+		</VisualContainer>
+		<Prompt ref="pr381" name="ve377" label="Version" selectionDisabled="true" applyDynamicBrushes="promptsOnly" sourceInteractionVariables="bi382">
+			<EditorProperties>
+				<Property key="autoChartCategory">CONTROL</Property>
+				<Property key="isAutoLabel">false</Property>
+			</EditorProperties>
+			<LinkBar/>
+		</Prompt>
+		<Crosstab measureSizing="autoFill" resultDefinitions="dd361" name="ve181" data="dd359" label="Crosstab - product - action set" applyDynamicBrushes="yes" sourceInteractionVariables="bi219 bi212">
+			<EditorProperties>
+				<Property key="isAutoLabel">false</Property>
+				<Property key="autoFrequencyQueryDataItemName">bi204</Property>
+				<Property key="addedInteractionQueryDataItems">bi422</Property>
+			</EditorProperties>
+			<Axes>
+				<Axis type="row">
+					<Hierarchy name="ve363" variable="bi212"/>
+				</Axis>
+				<Axis type="column">
+					<Hierarchy name="ve362" variable="bi219"/>
+					<Measures>
+						<Measure compactFormat="false" name="ve364" class="measurebi204" variable="bi204">
+							<Conditions>
+								<Condition ref="cd366">
+									<ConditionParameters>
+										<ConditionParameter variable="bi1" parameter="bi204"/>
+									</ConditionParameters>
+								</Condition>
+							</Conditions>
+						</Measure>
+					</Measures>
+				</Axis>
+			</Axes>
+			<Summary>
+				<Total columnVisible="false" rowVisible="true"/>
+				<Subtotal columnVisible="false" rowVisible="false"/>
+			</Summary>
+		</Crosstab>
+		<Prompt ref="pr394" name="ve395" label="Product Selection" applyDynamicBrushes="promptsOnly" sourceInteractionVariables="bi391">
+			<EditorProperties>
+				<Property key="isAutoLabel">false</Property>
+				<Property key="autoChartCategory">CONTROL</Property>
+			</EditorProperties>
+			<CheckBoxList searchable="false" selectAllEnabled="true"/>
+		</Prompt>
+		<Crosstab missingValueLabel="missingString" measureSizing="autoFill" resultDefinitions="dd45" name="ve15" data="dd43" label="Crosstab - Version - Action Set" applyDynamicBrushes="yes" sourceInteractionVariables="bi56 bi64">
+			<EditorProperties>
+				<Property key="isAutoLabel">false</Property>
+				<Property key="autoFrequencyQueryDataItemName">bi38</Property>
+			</EditorProperties>
+			<Axes>
+				<Axis type="row">
+					<Hierarchy name="ve65" variable="bi64">
+						<Level uniqueLevelName="bi58"/>
+						<Level uniqueLevelName="bi8"/>
+						<Level uniqueLevelName="bi10"/>
+					</Hierarchy>
+				</Axis>
+				<Axis type="column">
+					<Hierarchy name="ve57" variable="bi56"/>
+					<Measures>
+						<Measure compactFormat="false" name="ve48" variable="bi38">
+							<Conditions>
+								<Condition ref="cd67">
+									<ConditionParameters>
+										<ConditionParameter variable="bi1" parameter="bi38"/>
+									</ConditionParameters>
+								</Condition>
+							</Conditions>
+						</Measure>
+					</Measures>
+				</Axis>
+			</Axes>
+			<RowNumbers visible="true" headerVisible="false"/>
+		</Crosstab>
+		<Crosstab measureSizing="autoFill" resultDefinitions="dd161" name="ve152" data="dd159" label="Crosstab - Version - Product - Action Set" applyDynamicBrushes="yes" sourceInteractionVariables="bi170 bi177">
+			<EditorProperties>
+				<Property key="isAutoLabel">false</Property>
+				<Property key="autoFrequencyQueryDataItemName">bi165</Property>
+				<Property key="addedInteractionQueryDataItems">bi423</Property>
+			</EditorProperties>
+			<Axes>
+				<Axis type="row">
+					<Hierarchy name="ve171" variable="bi170">
+						<Level uniqueLevelName="bi113"/>
+						<Level uniqueLevelName="bi209"/>
+						<Level uniqueLevelName="bi385"/>
+					</Hierarchy>
+				</Axis>
+				<Axis type="column">
+					<Hierarchy name="ve178" variable="bi177"/>
+					<Measures>
+						<Measure compactFormat="false" name="ve166" variable="bi165">
+							<Conditions>
+								<Condition ref="cd173">
+									<ConditionParameters>
+										<ConditionParameter variable="bi1" parameter="bi165"/>
+									</ConditionParameters>
+								</Condition>
+							</Conditions>
+						</Measure>
+					</Measures>
+				</Axis>
+			</Axes>
+		</Crosstab>
+	</VisualElements>
+	<PromptDefinitions>
+		<PromptDefinition data="dd274" label="Action Set" isParameter="true" labelVariable="bi268" valueVariable="bi268" resultDefinitions="dd276" name="pr244">
+			<DefaultValue>
+				<String dynamicValue="first"></String>
+			</DefaultValue>
+			<StringConstraint required="true"/>
+		</PromptDefinition>
+		<PromptDefinition data="dd253" label="Action" isParameter="true" labelVariable="bi280" valueVariable="bi280" resultDefinitions="dd252" name="pr245">
+			<DefaultValue>
+				<String dynamicValue="first"></String>
+			</DefaultValue>
+			<StringConstraint required="true"/>
+		</PromptDefinition>
+		<PromptDefinition data="dd339" labelVariable="bi338" valueVariable="bi338" resultDefinitions="dd341" measureVariable="bi330" name="pr342">
+			<DefaultValue>
+				<Collection>
+					<String>Viya 3.4</String>
+					<String>Viya 4 (2021.2)</String>
+					<String>Viya 3.5</String>
+					<String>Viya 4 (2020.1)</String>
+					<String>Viya 4 (2021.1)</String>
+					<String>Viya 4 (2021.2.5)</String>
+					<String>Viya 4 (2021.2.6)</String>
+				</Collection>
+			</DefaultValue>
+			<StringConstraint/>
+		</PromptDefinition>
+		<PromptDefinition data="dd348" labelVariable="bi358" valueVariable="bi358" resultDefinitions="dd345" measureVariable="bi346" name="pr350">
+			<DefaultValue>
+				<String>SAS Visual Forecasting</String>
+			</DefaultValue>
+			<StringConstraint/>
+		</PromptDefinition>
+		<PromptDefinition data="dd378" labelVariable="bi382" valueVariable="bi382" resultDefinitions="dd380" measureVariable="bi383" name="pr381">
+			<DefaultValue>
+				<String>Viya 3.5</String>
+			</DefaultValue>
+			<StringConstraint/>
+		</PromptDefinition>
+		<PromptDefinition data="dd392" labelVariable="bi391" valueVariable="bi391" resultDefinitions="dd389" measureVariable="bi390" name="pr394">
+			<DefaultValue>
+				<Collection>
+					<String>SAS Visual Statistics</String>
+					<String>SAS Visual Data Mining and Machine Learning</String>
+				</Collection>
+			</DefaultValue>
+			<StringConstraint/>
+		</PromptDefinition>
+	</PromptDefinitions>
+	<View>
+		<Header>
+			<MediaContainer target="mt2">
+				<ResponsiveLayout orientation="horizontal" overflow="fit">
+					<Weights mediaTarget="mt5" unit="percent">
+						<Weight value="100%"/>
+					</Weights>
+					<Weights mediaTarget="mt4" unit="percent">
+						<Weight value="100%"/>
+					</Weights>
+					<Weights mediaTarget="mt3" unit="percent">
+						<Weight value="100%"/>
+					</Weights>
+				</ResponsiveLayout>
+			</MediaContainer>
+		</Header>
+		<Section name="vi6" label="Actions and Action Sets by Version">
+			<Header>
+				<MediaContainer target="mt2">
+					<ResponsiveLayout orientation="horizontal" overflow="fit">
+						<Weights mediaTarget="mt5" unit="percent">
+							<Weight value="100%"/>
+						</Weights>
+						<Weights mediaTarget="mt4" unit="percent">
+							<Weight value="100%"/>
+						</Weights>
+						<Weights mediaTarget="mt3" unit="percent">
+							<Weight value="100%"/>
+						</Weights>
+					</ResponsiveLayout>
+				</MediaContainer>
+			</Header>
+			<Body>
+				<MediaContainer target="mt2">
+					<ResponsiveLayout orientation="vertical" overflow="fit">
+						<Weights mediaTarget="mt5" unit="percent">
+							<Weight value="100%"/>
+						</Weights>
+						<Weights mediaTarget="mt4" unit="percent">
+							<Weight value="100%"/>
+						</Weights>
+						<Weights mediaTarget="mt3" unit="percent">
+							<Weight value="100%"/>
+						</Weights>
+					</ResponsiveLayout>
+					<Visual ref="ve15" name="vi14">
+						<ResponsiveConstraint>
+							<WidthConstraint>
+								<Width mediaTarget="mt3" preferredSizeBehavior="ignore" flexibility="flexible"/>
+							</WidthConstraint>
+							<HeightConstraint>
+								<Height mediaTarget="mt3" preferredSizeBehavior="ignore" flexibility="flexible"/>
+							</HeightConstraint>
+						</ResponsiveConstraint>
+					</Visual>
+				</MediaContainer>
+			</Body>
+		</Section>
+		<Section name="vi122" label="Actions and Action Sets by Product by Version">
+			<Header>
+				<MediaContainer target="mt2">
+					<ResponsiveLayout orientation="horizontal" overflow="fit">
+						<Weights mediaTarget="mt5" unit="percent">
+							<Weight value="100%"/>
+						</Weights>
+						<Weights mediaTarget="mt4" unit="percent">
+							<Weight value="100%"/>
+						</Weights>
+						<Weights mediaTarget="mt3" unit="percent">
+							<Weight value="100%"/>
+						</Weights>
+					</ResponsiveLayout>
+				</MediaContainer>
+			</Header>
+			<Body>
+				<MediaContainer target="mt2">
+					<ResponsiveLayout orientation="vertical" overflow="fit">
+						<Weights mediaTarget="mt5" unit="percent">
+							<Weight value="100%"/>
+						</Weights>
+						<Weights mediaTarget="mt4" unit="percent">
+							<Weight value="100%"/>
+						</Weights>
+						<Weights mediaTarget="mt3" unit="percent">
+							<Weight value="100%"/>
+						</Weights>
+					</ResponsiveLayout>
+					<Container ref="ve344" name="vi343">
+						<ResponsiveConstraint>
+							<WidthConstraint>
+								<Width mediaTarget="mt3" preferredSizeBehavior="honor" flexibility="shrinkable"/>
+							</WidthConstraint>
+							<HeightConstraint>
+								<Height mediaTarget="mt3" preferredSizeBehavior="honor" flexibility="shrinkable"/>
+							</HeightConstraint>
+						</ResponsiveConstraint>
+						<ResponsiveLayout orientation="vertical" overflow="grow"/>
+						<Container ref="ve357" name="vi356">
+							<ResponsiveConstraint>
+								<WidthConstraint>
+									<Width mediaTarget="mt3" preferredSizeBehavior="honor" flexibility="shrinkable"/>
+								</WidthConstraint>
+								<HeightConstraint>
+									<Height mediaTarget="mt3" preferredSizeBehavior="honor" flexibility="shrinkable"/>
+								</HeightConstraint>
+							</ResponsiveConstraint>
+							<ResponsiveLayout orientation="vertical" overflow="grow">
+								<Weights mediaTarget="mt5" unit="percent">
+									<Weight value="100%"/>
+								</Weights>
+								<Weights mediaTarget="mt4" unit="percent">
+									<Weight value="100%"/>
+								</Weights>
+								<Weights mediaTarget="mt3" unit="percent">
+									<Weight value="100%"/>
+								</Weights>
+							</ResponsiveLayout>
+							<Visual ref="ve324" name="vi323">
+								<ResponsiveConstraint>
+									<WidthConstraint>
+										<Width mediaTarget="mt3" preferredSizeBehavior="ignore" value="19.35%" flexibility="shrinkable"/>
+									</WidthConstraint>
+									<HeightConstraint>
+										<Height mediaTarget="mt3" preferredSizeBehavior="ignore" value="22.62%" flexibility="shrinkable"/>
+									</HeightConstraint>
+								</ResponsiveConstraint>
+							</Visual>
+							<Visual ref="ve351" name="vi352">
+								<ResponsiveConstraint>
+									<WidthConstraint>
+										<Width mediaTarget="mt3" preferredSizeBehavior="ignore" value="19.35%" flexibility="shrinkable"/>
+									</WidthConstraint>
+									<HeightConstraint>
+										<Height mediaTarget="mt3" preferredSizeBehavior="ignore" value="32.05%" flexibility="shrinkable"/>
+									</HeightConstraint>
+								</ResponsiveConstraint>
+							</Visual>
+							<Visual ref="ve247" name="vi246">
+								<ResponsiveConstraint>
+									<WidthConstraint>
+										<Width mediaTarget="mt3" preferredSizeBehavior="ignore" value="12.5%" flexibility="shrinkable"/>
+									</WidthConstraint>
+									<HeightConstraint>
+										<Height mediaTarget="mt3" preferredSizeBehavior="honor" flexibility="fixed"/>
+									</HeightConstraint>
+								</ResponsiveConstraint>
+							</Visual>
+							<Visual ref="ve256" name="vi257">
+								<ResponsiveConstraint>
+									<WidthConstraint>
+										<Width mediaTarget="mt3" preferredSizeBehavior="ignore" value="12.5%" flexibility="shrinkable"/>
+									</WidthConstraint>
+									<HeightConstraint>
+										<Height mediaTarget="mt3" preferredSizeBehavior="honor" flexibility="fixed"/>
+									</HeightConstraint>
+								</ResponsiveConstraint>
+							</Visual>
+						</Container>
+						<Visual ref="ve152" name="vi151">
+							<ResponsiveConstraint>
+								<WidthConstraint>
+									<Width mediaTarget="mt3" preferredSizeBehavior="ignore" value="79.64%" flexibility="flexible"/>
+								</WidthConstraint>
+								<HeightConstraint>
+									<Height mediaTarget="mt3" preferredSizeBehavior="ignore" value="90%" flexibility="flexible"/>
+								</HeightConstraint>
+							</ResponsiveConstraint>
+						</Visual>
+					</Container>
+					<Container ref="ve320" name="vi319">
+						<ResponsiveConstraint>
+							<WidthConstraint>
+								<Width mediaTarget="mt3" preferredSizeBehavior="honor" flexibility="shrinkable"/>
+							</WidthConstraint>
+							<HeightConstraint>
+								<Height mediaTarget="mt3" preferredSizeBehavior="honor" flexibility="shrinkable"/>
+							</HeightConstraint>
+						</ResponsiveConstraint>
+						<ResponsiveLayout orientation="vertical" overflow="grow"/>
+						<Visual ref="ve283" name="vi282">
+							<ResponsiveConstraint>
+								<WidthConstraint>
+									<Width mediaTarget="mt3" preferredSizeBehavior="ignore" value="50%" flexibility="shrinkable"/>
+								</WidthConstraint>
+								<HeightConstraint>
+									<Height mediaTarget="mt3" preferredSizeBehavior="ignore" value="11.02%" flexibility="shrinkable"/>
+								</HeightConstraint>
+							</ResponsiveConstraint>
+						</Visual>
+						<Visual ref="ve313" name="vi314">
+							<ResponsiveConstraint>
+								<WidthConstraint>
+									<Width mediaTarget="mt3" preferredSizeBehavior="ignore" value="50%" flexibility="shrinkable"/>
+								</WidthConstraint>
+								<HeightConstraint>
+									<Height mediaTarget="mt3" preferredSizeBehavior="ignore" value="11.02%" flexibility="shrinkable"/>
+								</HeightConstraint>
+							</ResponsiveConstraint>
+						</Visual>
+					</Container>
+				</MediaContainer>
+			</Body>
+		</Section>
+		<Section name="vi179" label="Action Sets by product">
+			<Header>
+				<MediaContainer target="mt2">
+					<ResponsiveLayout orientation="horizontal" overflow="fit">
+						<Weights mediaTarget="mt5" unit="percent">
+							<Weight value="100%"/>
+						</Weights>
+						<Weights mediaTarget="mt4" unit="percent">
+							<Weight value="100%"/>
+						</Weights>
+						<Weights mediaTarget="mt3" unit="percent">
+							<Weight value="100%"/>
+						</Weights>
+					</ResponsiveLayout>
+				</MediaContainer>
+			</Header>
+			<Body>
+				<MediaContainer target="mt2">
+					<ResponsiveLayout orientation="vertical" overflow="fit">
+						<Weights mediaTarget="mt5" unit="percent">
+							<Weight value="100%"/>
+						</Weights>
+						<Weights mediaTarget="mt4" unit="percent">
+							<Weight value="100%"/>
+						</Weights>
+						<Weights mediaTarget="mt3" unit="percent">
+							<Weight value="100%"/>
+						</Weights>
+					</ResponsiveLayout>
+					<Visual ref="ve377" name="vi376">
+						<ResponsiveConstraint>
+							<WidthConstraint>
+								<Width mediaTarget="mt3" preferredSizeBehavior="ignore" flexibility="flexible"/>
+							</WidthConstraint>
+							<HeightConstraint>
+								<Height mediaTarget="mt3" preferredSizeBehavior="honor" flexibility="fixed"/>
+							</HeightConstraint>
+						</ResponsiveConstraint>
+					</Visual>
+					<Visual ref="ve181" name="vi180">
+						<ResponsiveConstraint>
+							<WidthConstraint>
+								<Width mediaTarget="mt3" preferredSizeBehavior="ignore" flexibility="flexible"/>
+							</WidthConstraint>
+							<HeightConstraint>
+								<Height mediaTarget="mt3" preferredSizeBehavior="ignore" value="66.61%" flexibility="flexible"/>
+							</HeightConstraint>
+						</ResponsiveConstraint>
+					</Visual>
+					<Visual ref="ve395" name="vi396">
+						<ResponsiveConstraint>
+							<WidthConstraint>
+								<Width mediaTarget="mt3" preferredSizeBehavior="ignore" value="19.35%" flexibility="shrinkable"/>
+							</WidthConstraint>
+							<HeightConstraint>
+								<Height mediaTarget="mt3" preferredSizeBehavior="ignore" value="28.96%" flexibility="shrinkable"/>
+							</HeightConstraint>
+						</ResponsiveConstraint>
+					</Visual>
+				</MediaContainer>
+			</Body>
+		</Section>
+	</View>
+	<Actions>
+		<NavigationAction type="url" value="${pk294}" label="Action Set Link" name="ac295">
+			<Parameters>
+				<Parameter key="pk294" method="substitute">
+					<Value variable="bi287" sendAs="formatted"/>
+				</Parameter>
+			</Parameters>
+		</NavigationAction>
+		<NavigationAction type="url" value="${pk401}" label="Action Link" name="ac402">
+			<Parameters>
+				<Parameter key="pk401" method="substitute">
+					<Value variable="bi315" sendAs="formatted"/>
+				</Parameter>
+			</Parameters>
+		</NavigationAction>
+	</Actions>
+	<Interactions>
+		<Interaction name="ia336" type="filter" dataStage="detail" derived="true">
+			<InteractionElementReference purpose="source" ref="ve324" variable="bi338"/>
+			<InteractionElementReference purpose="target" ref="ve247" variable="bi417"/>
+		</Interaction>
+		<Interaction name="ia337" type="filter" dataStage="detail" derived="true">
+			<InteractionElementReference purpose="source" ref="ve324" variable="bi338"/>
+			<InteractionElementReference purpose="target" ref="ve256" variable="bi414"/>
+		</Interaction>
+		<Interaction name="ia354" type="filter" dataStage="detail" derived="true">
+			<InteractionElementReference purpose="source" ref="ve351" variable="bi358"/>
+			<InteractionElementReference purpose="target" ref="ve247" variable="bi418"/>
+		</Interaction>
+		<Interaction name="ia355" type="filter" dataStage="detail" derived="true">
+			<InteractionElementReference purpose="source" ref="ve351" variable="bi358"/>
+			<InteractionElementReference purpose="target" ref="ve256" variable="bi415"/>
+		</Interaction>
+		<Interaction name="ia384" type="filter" derived="false">
+			<InteractionElementReference purpose="source" ref="ve377" variable="bi382"/>
+			<InteractionElementReference purpose="target" ref="ve181" variable="bi422"/>
+		</Interaction>
+		<Interaction name="ia400" type="filter" derived="false">
+			<InteractionElementReference purpose="source" ref="ve395" variable="bi391"/>
+			<InteractionElementReference purpose="target" ref="ve181" variable="bi219"/>
+		</Interaction>
+		<Interaction name="ia261" type="filter" derived="false">
+			<InteractionElementReference purpose="source" ref="ve152" variable="bi170 bi177"/>
+			<InteractionElementReference purpose="target" ref="ve247" variable="bi419 bi417"/>
+		</Interaction>
+		<Interaction name="ia262" type="filter" derived="false">
+			<InteractionElementReference purpose="source" ref="ve152" variable="bi170 bi177"/>
+			<InteractionElementReference purpose="target" ref="ve256" variable="bi416 bi414"/>
+		</Interaction>
+		<Interaction name="ia335" type="filter" dataStage="detail" derived="false">
+			<InteractionElementReference purpose="source" ref="ve324" variable="bi338"/>
+			<InteractionElementReference purpose="target" ref="ve152" variable="bi177"/>
+		</Interaction>
+		<Interaction name="ia353" type="filter" dataStage="detail" derived="false">
+			<InteractionElementReference purpose="source" ref="ve351" variable="bi358"/>
+			<InteractionElementReference purpose="target" ref="ve152" variable="bi423"/>
+		</Interaction>
+		<Interaction name="ia420" type="parameter" dataStage="detail" derived="true">
+			<InteractionElementReference purpose="source" ref="ve247" variable="pr244"/>
+			<InteractionElementReference purpose="target" ref="ve283" variable="pr244"/>
+		</Interaction>
+		<Interaction name="ia421" type="parameter" dataStage="detail" derived="true">
+			<InteractionElementReference purpose="source" ref="ve256" variable="pr245"/>
+			<InteractionElementReference purpose="target" ref="ve313" variable="pr245"/>
+		</Interaction>
+	</Interactions>
+	<Conditions>
+		<Condition scope="local" name="cd366">
+			<ConditionVariables>
+				<ConditionVariable variable="bi1" type="numeric"/>
+			</ConditionVariables>
+			<If name="cc365" class="If">
+				<Expression>gt(${bi1},0)</Expression>
+			</If>
+		</Condition>
+		<Condition scope="local" label="Yes" name="cd67">
+			<ConditionVariables>
+				<ConditionVariable variable="bi1" type="numeric"/>
+			</ConditionVariables>
+			<If name="cc66" class="If">
+				<Expression>notMissing(${bi1})</Expression>
+			</If>
+		</Condition>
+		<Condition scope="local" name="cd173">
+			<ConditionVariables>
+				<ConditionVariable variable="bi1" type="numeric"/>
+			</ConditionVariables>
+			<If name="cc172" class="If">
+				<Expression>notMissing(${bi1})</Expression>
+			</If>
+		</Condition>
+	</Conditions>
+	<MediaSchemes>
+		<MediaScheme name="ms1">
+			<BaseStylesheetResource theme="opal"/>
+			<Stylesheet>
+<![CDATA[
+#ve283 .tableColumnbi287 {
+  width: 746px;
+}
+#ve181 .measurebi204 {
+  width: 209px;
+}
+#ve15 .Table {
+  alt-row-color: #FFFFFF;
+  row-color: #FFFFFF;
+}
+#ve313 .tableColumnbi315 {
+  width: 747px;
+}
+#cd173 .If {
+  background-color: #71EBBF;
+}
+#ve15 .hierarchybi49 {
+  width: 310px;
+}
+#ve15 .RowHeader {
+  background-color: #C7E3F9;
+}
+#cd366 .If {
+  background-color: #7DC3FC;
+}
+#cd67 .If {
+  background-color: #71EBBF;
+}
+]]>
+			</Stylesheet>
+		</MediaScheme>
+	</MediaSchemes>
+	<MediaTargets>
+		<MediaTarget windowSize="default" scheme="ms1" name="mt2"/>
+		<MediaTarget windowSize="small" scheme="ms1" name="mt3"/>
+		<MediaTarget windowSize="medium" scheme="ms1" name="mt4"/>
+		<MediaTarget windowSize="large" scheme="ms1" name="mt5"/>
+	</MediaTargets>
+	<Properties>
+		<Property key="displayDataSource">ds106</Property>
+	</Properties>
+	<Groupings>
+		<Grouping outputType="string" name="gr55">
+			<GroupingVariables>
+				<GroupingVariable variable="var54" type="string"/>
+			</GroupingVariables>
+			<Group>
+				<ValueExpression>&apos;Viya 3.4&apos;</ValueExpression>
+				<TestExpression>in(${var54,binned},&apos;SAS 9.4 / Viya 3.4&apos;)</TestExpression>
+			</Group>
+			<Group>
+				<ValueExpression>&apos;Viya 3.5&apos;</ValueExpression>
+				<TestExpression>in(${var54,binned},&apos;SAS 9.4 / Viya 3.5&apos;)</TestExpression>
+			</Group>
+			<Group>
+				<ValueExpression>&apos;Viya 4 (2021.2.5)&apos;</ValueExpression>
+				<TestExpression>in(${var54,binned},&apos;2021.2.5&apos;)</TestExpression>
+			</Group>
+			<Group>
+				<ValueExpression>&apos;Viya 4 (2020.1)&apos;</ValueExpression>
+				<TestExpression>in(${var54,binned},&apos;2020.1&apos;)</TestExpression>
+			</Group>
+			<Group>
+				<ValueExpression>&apos;Viya 4 (2021.1)&apos;</ValueExpression>
+				<TestExpression>in(${var54,binned},&apos;2021.1&apos;)</TestExpression>
+			</Group>
+			<Group>
+				<ValueExpression>&apos;Viya 4 (2021.2)&apos;</ValueExpression>
+				<TestExpression>in(${var54,binned},&apos;2021.2&apos;)</TestExpression>
+			</Group>
+			<Group>
+				<ValueExpression>&apos;Viya 4 (2021.2.6)&apos;</ValueExpression>
+				<TestExpression>in(${var54,binned},&apos;2021.2.6&apos;)</TestExpression>
+			</Group>
+			<Other>
+				<ValueExpression>&apos;Other&apos;</ValueExpression>
+			</Other>
+		</Grouping>
+		<Grouping outputType="string" name="gr60">
+			<GroupingVariables>
+				<GroupingVariable variable="var59" type="string"/>
+			</GroupingVariables>
+			<Group>
+				<ValueExpression>&apos;Table / Tables&apos;</ValueExpression>
+				<TestExpression>in(${var59,binned},&apos;Table&apos;,&apos;Tables&apos;)</TestExpression>
+			</Group>
+			<Group>
+				<ValueExpression>&apos;Sequence / Sequence Rule Mining&apos;</ValueExpression>
+				<TestExpression>in(${var59,binned},&apos;Sequence Rule Mining&apos;,&apos;Sequence&apos;)</TestExpression>
+			</Group>
+			<Group>
+				<ValueExpression>&apos;Explain Model / Explain Model Actions&apos;</ValueExpression>
+				<TestExpression>in(${var59,binned},&apos;Explain Model&apos;,&apos;Explain Model Actions&apos;)</TestExpression>
+			</Group>
+			<Other>
+				<ValueExpression>${var59,binned}</ValueExpression>
+			</Other>
+		</Grouping>
+		<Grouping outputType="string" name="gr176">
+			<GroupingVariables>
+				<GroupingVariable variable="var175" type="string"/>
+			</GroupingVariables>
+			<Group>
+				<ValueExpression>&apos;Viya 3.4&apos;</ValueExpression>
+				<TestExpression>in(${var175,binned},&apos;SAS 9.4 / Viya 3.4&apos;)</TestExpression>
+			</Group>
+			<Group>
+				<ValueExpression>&apos;Viya 3.5&apos;</ValueExpression>
+				<TestExpression>in(${var175,binned},&apos;SAS 9.4 / Viya 3.5&apos;)</TestExpression>
+			</Group>
+			<Group>
+				<ValueExpression>&apos;Viya 4 (2020.1)&apos;</ValueExpression>
+				<TestExpression>in(${var175,binned},&apos;2020.1&apos;)</TestExpression>
+			</Group>
+			<Group>
+				<ValueExpression>&apos;Viya 4 (2021.1)&apos;</ValueExpression>
+				<TestExpression>in(${var175,binned},&apos;2021.1&apos;)</TestExpression>
+			</Group>
+			<Group>
+				<ValueExpression>&apos;Viya 4 (2021.2)&apos;</ValueExpression>
+				<TestExpression>in(${var175,binned},&apos;2021.2&apos;)</TestExpression>
+			</Group>
+			<Group>
+				<ValueExpression>&apos;Viya 4 (2021.2.5)&apos;</ValueExpression>
+				<TestExpression>in(${var175,binned},&apos;2021.2.5&apos;)</TestExpression>
+			</Group>
+			<Group>
+				<ValueExpression>&apos;Viya 4 (2021.2.6)&apos;</ValueExpression>
+				<TestExpression>in(${var175,binned},&apos;2021.2.6&apos;)</TestExpression>
+			</Group>
+			<Other>
+				<ValueExpression>&apos;Other&apos;</ValueExpression>
+			</Other>
+		</Grouping>
+		<Grouping outputType="string" name="gr211">
+			<GroupingVariables>
+				<GroupingVariable variable="var210" type="string"/>
+			</GroupingVariables>
+			<Group>
+				<ValueExpression>&apos;Table / Tables&apos;</ValueExpression>
+				<TestExpression>in(${var210,binned},&apos;Table&apos;,&apos;Tables&apos;)</TestExpression>
+			</Group>
+			<Group>
+				<ValueExpression>&apos;Market Analysis / Market Attribution&apos;</ValueExpression>
+				<TestExpression>in(${var210,binned},&apos;Market Analysis&apos;,&apos;Market Attribution&apos;)</TestExpression>
+			</Group>
+			<Group>
+				<ValueExpression>&apos;Sequence / Sequence Rule Mining&apos;</ValueExpression>
+				<TestExpression>in(${var210,binned},&apos;Sequence&apos;,&apos;Sequence Rule Mining&apos;)</TestExpression>
+			</Group>
+			<Group>
+				<ValueExpression>&apos;Explain Model / Explain Model Actions&apos;</ValueExpression>
+				<TestExpression>in(${var210,binned},&apos;Explain Model&apos;,&apos;Explain Model Actions&apos;)</TestExpression>
+			</Group>
+			<Other>
+				<ValueExpression>${var210,binned}</ValueExpression>
+			</Other>
+		</Grouping>
+		<Grouping outputType="string" name="gr387">
+			<GroupingVariables>
+				<GroupingVariable variable="var386" type="string"/>
+			</GroupingVariables>
+			<Group>
+				<ValueExpression>&apos;deleteBWList / deleteDAList&apos;</ValueExpression>
+				<TestExpression>in(${var386,binned},&apos;deleteBWList&apos;,&apos;deleteDAList&apos;)</TestExpression>
+			</Group>
+			<Group>
+				<ValueExpression>&apos;operBWPaths / operDAPaths&apos;</ValueExpression>
+				<TestExpression>in(${var386,binned},&apos;operBWPaths&apos;,&apos;operDAPaths&apos;)</TestExpression>
+			</Group>
+			<Other>
+				<ValueExpression>${var386,binned}</ValueExpression>
+			</Other>
+		</Grouping>
+	</Groupings>
+	<DataSourceMappings>
+		<InternalDataSourceMapping source="ds7" target="ds106" name="dm149">
+			<InternalColumnMapping source="bi9" target="bi109"/>
+			<InternalColumnMapping source="bi11" target="bi108"/>
+		</InternalDataSourceMapping>
+		<InternalDataSourceMapping source="ds70" target="ds106" name="dm150">
+			<InternalColumnMapping source="bi71" target="bi109"/>
+			<InternalColumnMapping source="bi75" target="bi108"/>
+		</InternalDataSourceMapping>
+	</DataSourceMappings>
+	<ExportProperties>
+		<Export destination="pdf">
+			<Property key="showCoverPage" value="true"></Property>
+			<Property key="showPageNumbers" value="true"></Property>
+		</Export>
+	</ExportProperties>
+	<History>
+		<Versions>
+			<Version key="4.16.0" lastDate="2022-04-21T15:07:46Z"/>
+		</Versions>
+		<Editors>
+			<Editor applicationName="VA">
+				<Revision editorVersion="2021.2.3" lastDate="2022-04-22T07:17:07.775Z"/>
+			</Editor>
+		</Editors>
+	</History>
+	<SASReportState date="2022-04-22T07:13:34Z">
+		<View/>
+	</SASReportState>
+</SASReport>
